@@ -14,16 +14,23 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+Route::middleware('auth')->group( function(){
 
-Route::get('/', 'ContentsController@home')->name('home');
-Route::get('/users', 'UsersController@index')->name('users');//users is just an arbitrary name
-Route::get('/users/new', 'UsersController@newUser')->name('new_user');
-Route::post('/users/new', 'UsersController@newUser')->name('create_user');
-Route::get('/users/{user_id}', 'UsersController@show')->name('show_user');
-Route::post('/users/{user_id}', 'UsersController@modify')->name('update_user');
-Auth::routes();
+    Route::get('/', 'ContentsController@home')->name('home');
+    Route::get('/users', 'UsersController@index')->name('users');//users is just an arbitrary name
+    Route::get('/users/new', 'UsersController@newUser')->name('new_user');
+    Route::post('/users/new', 'UsersController@newUser')->name('create_user');
+    Route::get('/users/{user_id}', 'UsersController@show')->name('show_user');
+    Route::post('/users/{user_id}', 'UsersController@modify')->name('update_user');
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+    //Route::get('/home', 'HomeController@index')->name('home');
+} );
+
+Auth::routes();//must have otherwise it thrown login route exception error
+
+
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/generate/password', function (){
     return bcrypt('123456789');

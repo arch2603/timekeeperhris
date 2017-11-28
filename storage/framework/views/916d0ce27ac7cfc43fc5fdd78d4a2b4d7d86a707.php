@@ -9,34 +9,25 @@
                     <small class="error"><?php echo e($errors->first('user_name')); ?></small>
                 </div>
                 <div class="medium-4  columns">
-                    <label>Title</label>
-                    <select name="form[title]">
-                        <?php $__currentLoopData = $titles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $title): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value="<?php echo e($title); ?>"><?php echo e($title); ?>.</option>
-
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select>
-                </div>
-                <div class="medium-4  columns">
                     <label>Name</label>
                     <input name="name" type="text" value="<?php echo e(old('name')); ?>">
                     <small class="error"><?php echo e($errors->first('name')); ?></small>
-                </div>
-                <div class="medium-8  columns">
-                    <label>Last Name</label>
-                    <input name="last_name" type="text" value="<?php echo e(old('last_name')); ?>">
-                    <small class="error"><?php echo e($errors->first('last_name')); ?></small>
-                </div>
-                <div class="medium-8  columns">
-                    <label>Mobile</label>
-                    <input name="mobile" type="text" value="<?php echo e(old('mobile')); ?>">
-                    <small class="error"><?php echo e($errors->first('mobile')); ?></small>
                 </div>
 
                 <div class="medium-12  columns">
                     <label>Email</label>
                     <input name="email" type="text" value="<?php echo e(old('email')); ?>">
                     <small class="error"><?php echo e($errors->first('email')); ?></small>
+                </div>
+                <div class="medium-12  columns">
+                    <label>Password</label>
+                    <input name="password" type="password" value="<?php echo e(old('password')); ?>">
+                    <small class="error"><?php echo e($errors->first('password')); ?></small>
+                </div>
+                <div class="medium-12  columns">
+                    <label>Confirm Password</label>
+                    <input name="password_confirmation" type="password" value="<?php echo e(old('password_confirmation')); ?>">
+                    <small class="error"><?php echo e($errors->first('password_confirmation')); ?></small>
                 </div>
                 <div class="medium-12  columns">
                     <input value="SAVE" class="button success hollow" type="submit">

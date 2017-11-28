@@ -14,7 +14,8 @@
           <th width="200">User Name</th>
           <th width="200">Name</th>
           <th width="200">Email</th>
-          <th width="200">Action</th>
+          <th width="200">Modify User Profile</th>
+
         </tr>
         </thead>
         <tbody>

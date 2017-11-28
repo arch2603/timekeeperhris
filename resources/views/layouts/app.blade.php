@@ -18,7 +18,21 @@
             <ul class="dropdown menu" data-dropdown-menu="tckp8q-dropdown-menu" role="menubar">
                 <li role="menuitem"><a href="{{ route('home') }}">Home</a></li>
                 <li role="menuitem"><a href="{{ route('users') }}">Users</a></li>
-                <!--<li role="menuitem"><a href="">Employees</a></li> -->
+                <li role="menuitem"><a href="">Employees</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="dropdown menu" data-dropdown-menu="tckp8q-dropdown-menu" role="menubar">
+                <li role="menuitem"><a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form></li>
+
             </ul>
         </div>
     </div>
